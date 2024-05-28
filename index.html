@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Estilo do container principal */
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            font-weight: 600;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin: 0 0 10px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            margin: 0 0 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo do resultado */
+        .result {
+            text-align: center;
+        }
+
+        #score {
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        /* Simulação de Terminal */
+        .terminal {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 20px;
+        }
+
+        .terminal span {
+            color: #0f0;
+        }
+
+        /* Link para Instagram */
+        .instagram-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .instagram-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: color 0.3s;
+        }
+
+        .instagram-link a:hover {
+            color: #0056b3;
+        }
+
+        .instagram-link i {
+            font-size: 24px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Desmistificando a Programação</h1>
+    <div class="container" id="intro">
+        <h2>Introdução à Programação</h2>
+        <div class="content">
+            <p><strong>O que é Programação?</strong></p>
+            <p>Programação é o processo de escrever, testar e manter o código fonte de programas de computador. Este código é escrito em uma linguagem de programação que pode ser compreendida por humanos e computadores.</p>
+            
+            <p><strong>Por que Aprender Programação?</strong></p>
+            <ul>
+                <li>Automatizar tarefas repetitivas</li>
+                <li>Desenvolver aplicativos e websites</li>
+                <li>Resolver problemas complexos de maneira eficiente</li>
+                <li>Aumentar o pensamento lógico e habilidades de resolução de problemas</li>
+            </ul>
+
+            <p><strong>Principais Linguagens de Programação:</strong></p>
+            <ul>
+                <li><strong>Python:</strong> Fácil de aprender e muito usado para desenvolvimento web, automação e ciência de dados.</li>
+                <li><strong>JavaScript:</strong> Essencial para desenvolvimento web, permite criar websites interativos.</li>
+                <li><strong>Java:</strong> Muito usado em desenvolvimento de aplicativos móveis e sistemas empresariais.</li>
+                <li><strong>C++:</strong> Usado para desenvolver sistemas operacionais, jogos e aplicações que requerem alta performance.</li>
+                <li><strong>CSS:</strong> Usada para estilizar páginas web.</li>
+            </ul>
+
+            <p><strong>Mitos Comuns sobre Programação:</strong></p>
+            <ul>
+                <li>Programação é só para gênios.</li>
+                <li>Você precisa saber muita matemática.</li>
+                <li>É tarde demais para começar a programar.</li>
+            </ul>
+
+            <p><strong>O que é um Algoritmo?</strong></p>
+            <p>Um algoritmo é uma sequência de instruções bem definidas que tem o objetivo de resolver um problema específico. Ele pode ser usado para desenhar gráficos, armazenar dados ou proteger sistemas de hackers, mas seu objetivo principal é resolver problemas específicos de maneira eficiente.</p>
+        </div>
+    </div>
+    
+    <div class="container" id="quiz">
+        <h2>Quiz Interativo</h2>
+        <div class="question">
+            <p>Qual dessas linguagens é usada para estilizar páginas web?</p>
+            <input type="radio" name="q1" value="incorrect"> Python<br>
+            <input type="radio" name="q1" value="incorrect"> JavaScript<br>
+            <input type="radio" name="q1" value="correct"> CSS<br>
+            <input type="radio" name="q1" value="incorrect"> Java<br>
+        </div>
+        <div class="question">
+            <p>Qual é o objetivo principal de um algoritmo?</p>
+            <input type="radio" name="q2" value="correct"> Resolver um problema específico<br>
+            <input type="radio" name="q2" value="incorrect"> Desenhar gráficos<br>
+            <input type="radio" name="q2" value="incorrect"> Armazenar dados<br>
+            <input type="radio" name="q2" value="incorrect"> Proteger sistemas de hackers<br>
+        </div>
+        <div class="question">
+            <p>Qual linguagem é conhecida por ser fácil de aprender e usada para automação e ciência de dados?</p>
+            <input type="radio" name="q3" value="correct"> Python<br>
+            <input type="radio" name="q3" value="incorrect"> C++<br>
+            <input type="radio" name="q3" value="incorrect"> Java<br>
+            <input type="radio" name="q3" value="incorrect"> PHP<br>
+        </div>
+        <div class="question">
+            <p>Qual linguagem é essencial para desenvolvimento web e permite criar websites interativos?</p>
+            <input type="radio" name="q4" value="correct"> JavaScript<br>
+            <input type="radio" name="q4" value="incorrect"> Ruby<br>
+            <input type="radio" name="q4" value="incorrect"> SQL<br>
+            <input type="radio" name="q4" value="incorrect"> Kotlin<br>
+        </div>
+        <button onclick="checkQuiz()">Enviar Respostas</button>
+    </div>
+    
+    <div class="container result" id="result">
+        <h2>Resultado</h2>
+        <p id="score"></p>
+    </div>
+
+    <div class="container" id="python">
+        <h2>Aprendendo Python</h2>
+        <div class="content">
+            <p>Python é uma linguagem de programação de alto nível, fácil de aprender e muito usada para desenvolvimento web, automação e ciência de dados. Vamos começar com alguns comandos básicos no Python.</p>
+            
+            <div class="terminal">
+                <p><span>&gt;&gt;&gt;</span> print("Olá, Mundo!")</p>
+                <p>Olá, Mundo!</p>
+                <p><span>&gt;&gt;&gt;</span> x = 5</p>
+                <p><span>&gt;&gt;&gt;</span> y = 10</p>
+                <p><span>&gt;&gt;&gt;</span> print(x + y)</p>
+                <p>15</p>
+                <p><span>&gt;&gt;&gt;</span> for i in range(5):</p>
+                <p>... print(i)</p>
+                <p>0</p>
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="instagram-link">
+        <p>Quer aprender mais sobre programação? Basta me seguir no Instagram</p>
+        <a href="https://www.instagram.com/nath_dev_?igsh=MXB2dzJjNHdzbW1mNQ%3D%3D&utm_source=qr" target="_blank">
+            <i class="fab fa-instagram"></i> @nath_dev_
+        </a>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const correctAnswers = document.querySelectorAll('input[type="radio"][value="correct"]:checked').length;
+            const totalQuestions = document.querySelectorAll('.question').length;
+            const score = `Você acertou ${correctAnswers} de ${totalQuestions} perguntas!`;
+
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('score').innerText = score;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
